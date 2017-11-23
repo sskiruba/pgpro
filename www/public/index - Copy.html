@@ -17,7 +17,7 @@
                           <div class="form-group col-md-12">
                               <label class="col-md-2 control-lable" for="uname">Name</label>
                               <div class="col-md-7">
-                                  <input type="text" name="uname" class="username form-control input-sm" ng-model="user.Name" required/>
+                                  <input type="text" name="uname" class="username form-control input-sm" ng-model="user.uname" required/>
                                 </div>
                                 <span style="color:red" ng-show="(myForm.uname.$touched || myForm.uname.$dirty) && myForm.uname.$invalid">
                                     <span ng-show="myForm.uname.$error.required" >Enter User Name</span>
@@ -30,7 +30,7 @@
                           <div class="form-group col-md-12">
                               <label class="col-md-2 control-lable" for="address">Address</label>
                               <div class="col-md-7">
-                                  <input type="text" class="form-control input-sm" ng-model="user.Address"/>
+                                  <input type="text" class="form-control input-sm" ng-model="user.City"/>
                               </div>
                           </div>
                       </div>
@@ -39,7 +39,7 @@
                           <div class="form-group col-md-12">
                               <label class="col-md-2 control-lable" for="email">Email</label>
                               <div class="col-md-7">
-                                  <input type="email" name="email" class="email form-control input-sm" ng-model="user.Email" required/>
+                                  <input type="email" name="email" class="email form-control input-sm" ng-model="user.email" required/>
                                   
                               </div>
                               <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
@@ -61,9 +61,9 @@
 
                         <div class="row">
                                 <div class="form-group col-md-12">
-                                    <label class="col-md-2 control-lable" for="email">Rent</label>
+                                    <label class="col-md-2 control-lable" for="email">Hobby</label>
                                     <div class="col-md-7">
-                                        <input type="text" class="email form-control input-sm" ng-model="user.Rent"/>
+                                        <input type="text" class="email form-control input-sm" ng-model="user.hobby"/>
                                         
                                     </div>
                                 </div>
@@ -103,11 +103,11 @@
                       <tbody>
                           <tr ng-repeat="i in userData | filter:search | filter :{uname:namesearch}">
                               <td>{{i.id}}</td>
-                              <td>{{i.Name | uppercase}}</span></td>
-                              <td>{{i.Address}}</span></td>
-                              <td>{{i.Email | lowercase}}</span></td>
+                              <td>{{i.uname | uppercase}}</span></td>
+                              <td>{{i.City}}</span></td>
+                              <td>{{i.email | lowercase}}</span></td>
                               <td>{{i.DOB | date:'dd-MMM-yy'}}</span></td>
-                              <td>{{i.Rent | currency:'AED'}}</span></td>
+                              <td>{{i.hobby | currency:'AED'}}</span></td>
                               
                               <td>
                               <button type="button" class="btn btn-success custom-width" ng-click="edit(i.id)">Edit</button>  
